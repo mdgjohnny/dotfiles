@@ -1,0 +1,12 @@
+# Minimal kitty configuration
+clear_all_shortcuts yes
+
+# Basic shortcuts
+map ctrl+shift+c copy_to_clipboard
+map ctrl+shift+v paste_from_clipboard
+map ctrl+shift+t new_tab
+map ctrl+shift+w close_window
+map ctrl+shift+n new_os_window
+
+# Explicit backspace mapping
+map BackSpace send_text all \x7f
