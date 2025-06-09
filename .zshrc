@@ -129,5 +129,18 @@ function sanetty() {
 function bats() {
     BATS_RUN_SKIPPED=true command bats *.bats
 }
+
+function llm() {
+    command llm "$@" | glow
+}
+
+function catmd() {
+    if [[ $1 == *.md ]]; then
+        glow "$@"
+    else
+        command cat "$@"
+    fi
+}
+
 export XDG_DATA_DIRS="$XDG_DATA_DIRS:/var/lib/flatpak/exports/share:/home/maya/.local/share/flatpak/exports/share"
 source $ZSH/oh-my-zsh.sh
