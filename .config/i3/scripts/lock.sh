@@ -1,7 +1,5 @@
-#!/bin/bash
-# ~/.config/i3/scripts/lock.sh
-
 #!/bin/sh
+
 
 BLANK='#00000000'
 CLEAR='#ffffff22'
@@ -11,24 +9,24 @@ WRONG='#880000bb'
 VERIFYING='#00564dE6'
 
 i3lock \
---insidever-color=$CLEAR     \
---ringver-color=$VERIFYING   \
+--insidever-color="$CLEAR"     \
+--ringver-color="$VERIFYING"   \
 \
---insidewrong-color=$CLEAR   \
---ringwrong-color=$WRONG     \
+--insidewrong-color="$CLEAR"   \
+--ringwrong-color="$WRONG"     \
 \
---inside-color=$BLANK        \
---ring-color=$DEFAULT        \
---line-color=$BLANK          \
---separator-color=$DEFAULT   \
+--inside-color="$BLANK"        \
+--ring-color="$DEFAULT"        \
+--line-color="$BLANK"          \
+--separator-color="$DEFAULT"   \
 \
---verif-color=$TEXT          \
---wrong-color=$TEXT          \
---time-color=$TEXT           \
---date-color=$TEXT           \
---layout-color=$TEXT         \
---keyhl-color=$WRONG         \
---bshl-color=$WRONG          \
+--verif-color="$TEXT"          \
+--wrong-color="$TEXT"          \
+--time-color="$TEXT"           \
+--date-color="$TEXT"           \
+--layout-color="$TEXT"         \
+--keyhl-color="$WRONG"        \
+--bshl-color="$WRONG"          \
 \
 --screen 1                   \
 --blur 9                     \
@@ -36,4 +34,4 @@ i3lock \
 --indicator                  \
 --time-str="%H:%M:%S"        \
 --date-str="%A, %Y-%m-%d"       \
---keylayout 1                \
+--keylayout 1

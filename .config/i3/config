@@ -52,7 +52,7 @@ bindsym $mod+u [class="dropdown_terminal_debug"] scratchpad show, move position 
 
 
 # Auto-lock after 10 mins of inactivity
-exec --no-startup-id xautolock -time 10 -locker "~/.config/i3/scripts/lock.sh"
+exec --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer normal  600 '~/.config/i3/scripts/lock.sh' ''
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
