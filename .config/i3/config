@@ -85,8 +85,8 @@ floating_modifier $mod
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
-# start a terminal with special class
-bindsym $mod+Return exec kitty --config ~/.config/kitty/scratchpad.conf -e zsh 
+# start a terminal with tmux (attaches to 'main' session or creates it)
+bindsym $mod+Return exec kitty --config ~/.config/kitty/scratchpad.conf -e tmux new-session -A -s main 
 
 # kill focused window
 bindsym $mod+Shift+q kill
