@@ -52,7 +52,7 @@ bindsym $mod+u [class="dropdown_terminal_debug"] scratchpad show, move position 
 
 
 # Auto-lock after 10 mins of inactivity
-exec --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer normal  600 '~/.config/i3/scripts/lock.sh' ''
+exec --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 10000 '~/.config/i3/scripts/lock.sh' ''
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -86,7 +86,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal with special class
-bindsym $mod+Return exec kitty --config ~/.config/kitty/scratchpad.conf -e zsh
+bindsym $mod+Return exec kitty --config ~/.config/kitty/scratchpad.conf -e zsh 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -326,4 +326,11 @@ exec_always --no-startup-id $HOME/.config/i3/scripts/xmodmap.sh
 
 # Move workspaces to the primary output when an output is disconnected
 # Happens a lot when turning HDMI on/off
-exec_always --no-startup-id xrandr --output HDMI1 --off && i3-msg move workspace to output primary || true
+# exec_always --no-startup-id xrandr --output HDMI1 --off && i3-msg move workspace to output primary || true
+# trouble with above is when we restart i3 while in docked mode the workspace
+# gets moved to primary.
+
+# set docked mode if it is available and we're in standard mode
+# basically: if we plugged in HDMI and we don't have it on, we should turn on
+# HDMI
+ exec_always --no-startup-id $HOME/.config/i3/scripts/autorandr.sh
