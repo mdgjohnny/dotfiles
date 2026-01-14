@@ -103,6 +103,9 @@ bindsym $mod+Shift+w exec firefox
 # start rofi
 bindsym $mod+d exec "rofi -modi drun,run -show drun"
 
+# power menu
+bindsym $mod+x exec ~/.config/rofi/powermenu.sh
+
 # A more modern dmenu replacement is rofi:
 
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
