@@ -5,9 +5,8 @@ return {
     local h = cx.active.current.hovered
     if h then
       if h.cha.is_dir then
-        -- Open directory in Thunar
-        local path = tostring(h.url)
-        os.execute('thunar "' .. path .. '" &')
+        -- Open directory in Thunar using yazi's child process spawning
+        local child, err = Command("thunar"):arg(tostring(h.url)):spawn()
       else
         ya.manager_emit("open", {})
       end
