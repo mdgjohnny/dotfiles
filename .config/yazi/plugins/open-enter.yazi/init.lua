@@ -5,8 +5,8 @@ return {
     local h = cx.active.current.hovered
     if h then
       if h.cha.is_dir then
-        -- Open directory in Thunar using yazi's child process spawning
-        local child, err = Command("thunar"):arg(tostring(h.url)):spawn()
+        -- Open directory in Thunar - orphan detaches from terminal
+        ya.manager_emit("shell", { 'thunar "$0"', orphan = true, confirm = false })
       else
         ya.manager_emit("open", {})
       end
