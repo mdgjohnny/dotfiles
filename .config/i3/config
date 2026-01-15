@@ -59,7 +59,7 @@ exec --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 10
 exec --no-startup-id nm-applet
 
 # wallpaper (--no-xinerama applies same wallpaper to all monitors)
-exec_always --no-startup-id feh --bg-scale --no-xinerama ~/boschwallpaper.jpg
+exec_always --no-startup-id feh --bg-fill ~/boschwallpaper.jpg
 
 
 

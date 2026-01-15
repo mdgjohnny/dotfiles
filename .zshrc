@@ -1,5 +1,4 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+# If you come from bash you might have to change your $PATH.  export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -46,6 +45,9 @@ ZSH_THEME="robbyrussell"
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
 # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+#if [ -z "$TMUX" ];then
+#tmux attach-session -t attach || tmux new-session -s default
+#fi
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
 
@@ -102,7 +104,7 @@ plugins=(git exercism)
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Created by `pipx` on 2025-01-28 02:08:18
-export PATH="$PATH:/home/maya/.local/bin"
+export PATH="$PATH:/home/maya/.local/bin:$HOME/.cargo/bin:$PATH"
 alias nessuscli="sudo /opt/nessus/sbin/nessuscli"
 
 
@@ -110,13 +112,13 @@ alias nessuscli="sudo /opt/nessus/sbin/nessuscli"
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
 # Not supported in the "fish" shell.
-(cat ~/.cache/wal/sequences &)
+[[ -f ~/.cache/wal/sequences ]] && (cat ~/.cache/wal/sequences &)
 
 # Alternative (blocks terminal for 0-3ms)
-cat ~/.cache/wal/sequences
+[[ -f ~/.cache/wal/sequences ]] && cat ~/.cache/wal/sequences
 
 # To add support for TTYs this line can be optionally added.
-source ~/.cache/wal/colors-tty.sh
+[[ -f ~/.cache/wal/colors-tty.sh ]] && source ~/.cache/wal/colors-tty.sh
 
 function d() {
     sdcv "$1" | less
@@ -131,7 +133,7 @@ function bats() {
 }
 
 function llm() {
-    command llm "$@" | glow
+    command llm "$@ - give a concise one line answer when possible; if multiple commands are needed, append them in different lines" | glow
 }
 
 function catmd() {
@@ -142,5 +144,12 @@ function catmd() {
     fi
 }
 
+
 export XDG_DATA_DIRS="$XDG_DATA_DIRS:/var/lib/flatpak/exports/share:/home/maya/.local/share/flatpak/exports/share"
 source $ZSH/oh-my-zsh.sh
+unsetopt BEEP
+alias nosleep='xset s off; xset -dpms'
+cd ~/
+setopt extended_glob
+export EDITOR=vim
+
