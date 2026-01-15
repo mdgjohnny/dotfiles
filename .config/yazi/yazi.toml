@@ -20,7 +20,6 @@ ueberzug_offset = [0, 0, 0, 0]
 
 [opener]
 edit = [
-  { run = 'nvim "$@"', block = true, for = "unix" },
   { run = 'vim "$@"', block = true, for = "unix" },
 ]
 open = [
@@ -32,12 +31,16 @@ reveal = [
 play = [
   { run = 'mpv "$@"', orphan = true, for = "linux" },
 ]
+image = [
+  { run = 'imv "$@"', orphan = true, for = "linux" },
+  { run = 'feh "$@"', orphan = true, for = "linux" },
+]
 
 [open]
 rules = [
   { name = "*/", use = ["edit", "open", "reveal"] },
   { mime = "text/*", use = ["edit", "reveal"] },
-  { mime = "image/*", use = ["open", "reveal"] },
+  { mime = "image/*", use = ["image", "reveal"] },
   { mime = "video/*", use = ["play", "reveal"] },
   { mime = "audio/*", use = ["play", "reveal"] },
   { mime = "inode/x-empty", use = ["edit", "reveal"] },

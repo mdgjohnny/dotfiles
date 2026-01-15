@@ -1,0 +1,27 @@
+# Custom keymap for yazi
+# Enter opens files with default program, l/right arrow enters directories
+
+[[manager.prepend_keymap]]
+on = ["<Enter>"]
+run = "open"
+desc = "Open file with default program"
+
+[[manager.prepend_keymap]]
+on = ["o"]
+run = "open"
+desc = "Open file with default program"
+
+[[manager.prepend_keymap]]
+on = ["O"]
+run = "open --interactive"
+desc = "Open file with picker"
+
+[[manager.prepend_keymap]]
+on = ["l"]
+run = "plugin --sync smart-enter"
+desc = "Enter directory or open file"
+
+[[manager.prepend_keymap]]
+on = ["<Right>"]
+run = "plugin --sync smart-enter"
+desc = "Enter directory or open file"
