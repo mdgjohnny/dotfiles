@@ -1,0 +1,162 @@
+# Catppuccin Mocha theme for yazi
+# Matches kitty/polybar/rofi setup
+
+[manager]
+cwd = { fg = "#94e2d5" }
+
+# Hovered item
+hovered = { fg = "#1e1e2e", bg = "#89b4fa" }
+preview_hovered = { underline = true }
+
+# Find/search
+find_keyword = { fg = "#f9e2af", italic = true }
+find_position = { fg = "#f5c2e7", bg = "reset", italic = true }
+
+# Markers
+marker_selected = { fg = "#a6e3a1", bg = "#a6e3a1" }
+marker_copied = { fg = "#f9e2af", bg = "#f9e2af" }
+marker_cut = { fg = "#f38ba8", bg = "#f38ba8" }
+
+# Tabs
+tab_active = { fg = "#1e1e2e", bg = "#cdd6f4" }
+tab_inactive = { fg = "#cdd6f4", bg = "#45475a" }
+tab_width = 1
+
+# Borders
+border_symbol = "│"
+border_style = { fg = "#7f849c" }
+
+[status]
+separator_open = ""
+separator_close = ""
+separator_style = { fg = "#45475a", bg = "#45475a" }
+
+# Mode indicators
+mode_normal = { fg = "#1e1e2e", bg = "#89b4fa", bold = true }
+mode_select = { fg = "#1e1e2e", bg = "#a6e3a1", bold = true }
+mode_unset = { fg = "#1e1e2e", bg = "#f2cdcd", bold = true }
+
+# Progress
+progress_label = { fg = "#cdd6f4", bold = true }
+progress_normal = { fg = "#89b4fa", bg = "#45475a" }
+progress_error = { fg = "#f38ba8", bg = "#45475a" }
+
+# Permissions
+permissions_t = { fg = "#89b4fa" }
+permissions_r = { fg = "#f9e2af" }
+permissions_w = { fg = "#f38ba8" }
+permissions_x = { fg = "#a6e3a1" }
+permissions_s = { fg = "#7f849c" }
+
+[input]
+border = { fg = "#89b4fa" }
+title = {}
+value = {}
+selected = { reversed = true }
+
+[select]
+border = { fg = "#89b4fa" }
+active = { fg = "#f5c2e7" }
+inactive = {}
+
+[tasks]
+border = { fg = "#89b4fa" }
+title = {}
+hovered = { underline = true }
+
+[which]
+mask = { bg = "#313244" }
+cand = { fg = "#94e2d5" }
+rest = { fg = "#9399b2" }
+desc = { fg = "#f5c2e7" }
+separator = "  "
+separator_style = { fg = "#585b70" }
+
+[help]
+on = { fg = "#f5c2e7" }
+exec = { fg = "#94e2d5" }
+desc = { fg = "#9399b2" }
+hovered = { bg = "#585b70", bold = true }
+footer = { fg = "#45475a", bg = "#cdd6f4" }
+
+[filetype]
+rules = [
+  # Media
+  { mime = "image/*", fg = "#94e2d5" },
+  { mime = "video/*", fg = "#f9e2af" },
+  { mime = "audio/*", fg = "#f9e2af" },
+
+  # Archives
+  { mime = "application/zip", fg = "#f5c2e7" },
+  { mime = "application/gzip", fg = "#f5c2e7" },
+  { mime = "application/x-tar", fg = "#f5c2e7" },
+  { mime = "application/x-bzip", fg = "#f5c2e7" },
+  { mime = "application/x-bzip2", fg = "#f5c2e7" },
+  { mime = "application/x-7z-compressed", fg = "#f5c2e7" },
+  { mime = "application/x-rar", fg = "#f5c2e7" },
+  { mime = "application/x-xz", fg = "#f5c2e7" },
+
+  # Documents
+  { mime = "application/pdf", fg = "#f38ba8" },
+  { mime = "application/*doc*", fg = "#89b4fa" },
+  { mime = "application/*sheet*", fg = "#a6e3a1" },
+
+  # Fallbacks
+  { name = "*", fg = "#cdd6f4" },
+  { name = "*/", fg = "#89b4fa" },
+]
+
+[icon]
+# Files
+files = [
+  { name = ".gitignore", text = "" },
+  { name = ".gitmodules", text = "" },
+  { name = "Cargo.toml", text = "" },
+  { name = "Dockerfile", text = "" },
+  { name = "Makefile", text = "" },
+  { name = "package.json", text = "" },
+]
+
+# Extensions
+exts = [
+  { name = "go", text = "", fg = "#79d4fd" },
+  { name = "rs", text = "", fg = "#f38ba8" },
+  { name = "py", text = "", fg = "#f9e2af" },
+  { name = "js", text = "", fg = "#f9e2af" },
+  { name = "ts", text = "", fg = "#89b4fa" },
+  { name = "lua", text = "", fg = "#89b4fa" },
+  { name = "sh", text = "", fg = "#a6e3a1" },
+  { name = "bash", text = "", fg = "#a6e3a1" },
+  { name = "zsh", text = "", fg = "#a6e3a1" },
+  { name = "md", text = "", fg = "#cdd6f4" },
+  { name = "json", text = "", fg = "#f9e2af" },
+  { name = "toml", text = "", fg = "#f38ba8" },
+  { name = "yaml", text = "", fg = "#f38ba8" },
+  { name = "yml", text = "", fg = "#f38ba8" },
+  { name = "jpg", text = "", fg = "#f5c2e7" },
+  { name = "jpeg", text = "", fg = "#f5c2e7" },
+  { name = "png", text = "", fg = "#f5c2e7" },
+  { name = "gif", text = "", fg = "#f5c2e7" },
+  { name = "svg", text = "", fg = "#f5c2e7" },
+  { name = "mp3", text = "", fg = "#f9e2af" },
+  { name = "flac", text = "", fg = "#f9e2af" },
+  { name = "mp4", text = "", fg = "#f9e2af" },
+  { name = "mkv", text = "", fg = "#f9e2af" },
+  { name = "zip", text = "", fg = "#f5c2e7" },
+  { name = "tar", text = "", fg = "#f5c2e7" },
+  { name = "gz", text = "", fg = "#f5c2e7" },
+  { name = "pdf", text = "", fg = "#f38ba8" },
+]
+
+# Directories
+dirs = [
+  { name = ".git", text = "" },
+  { name = ".config", text = "" },
+  { name = "Desktop", text = "" },
+  { name = "Documents", text = "" },
+  { name = "Downloads", text = "" },
+  { name = "Music", text = "" },
+  { name = "Pictures", text = "" },
+  { name = "Videos", text = "" },
+  { name = "node_modules", text = "" },
+]
