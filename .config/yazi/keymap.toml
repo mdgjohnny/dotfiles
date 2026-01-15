@@ -4,7 +4,7 @@
 
 [[manager.prepend_keymap]]
 on = ["<Enter>"]
-run = "plugin --sync open-enter"
+run = "open"
 desc = "Open file/dir externally (Thunar for dirs)"
 
 [[manager.prepend_keymap]]

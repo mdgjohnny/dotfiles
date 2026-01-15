@@ -35,10 +35,13 @@ image = [
   { run = 'imv "$@"', orphan = true, for = "linux" },
   { run = 'feh "$@"', orphan = true, for = "linux" },
 ]
+folder = [
+  { run = 'thunar "$@"', orphan = true, desc = "Open in Thunar", for = "linux" },
+]
 
 [open]
 rules = [
-  { name = "*/", use = ["edit", "open", "reveal"] },
+  { name = "*/", use = ["folder", "reveal"] },
   { mime = "text/*", use = ["edit", "reveal"] },
   { mime = "image/*", use = ["image", "reveal"] },
   { mime = "video/*", use = ["play", "reveal"] },
