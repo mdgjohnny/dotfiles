@@ -1,10 +1,11 @@
 # Custom keymap for yazi
-# Enter opens files with default program, l/right arrow enters directories
+# Enter: opens files with default app, opens directories in Thunar
+# l/right arrow: navigates into directories, opens files
 
 [[manager.prepend_keymap]]
 on = ["<Enter>"]
-run = "open"
-desc = "Open file with default program"
+run = "plugin --sync open-enter"
+desc = "Open file/dir externally (Thunar for dirs)"
 
 [[manager.prepend_keymap]]
 on = ["o"]
